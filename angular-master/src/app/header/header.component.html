@@ -1,0 +1,21 @@
+<header>
+  <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+  <div><a href="" class="navbar-brand">Transtu</a></div>
+  
+  <ul class="navbar-nav">
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">View horaires</a></li>
+   <!-- <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addemployee" class="nav-link">Add New Employee</a></li>-->
+   <li><a *ngIf="loginService.isUserLoggedIn()"  routerLink="/tarifs"   class="nav-link">Tarifs</a></li>
+   <li><a *ngIf="loginService.isUserLoggedIn()"  routerLink="/stations" class="nav-link">Stations</a></li>
+   <li><a *ngIf="loginService.isUserLoggedIn()"  routerLink="/sections" class="nav-link">Sections</a></li>
+   <li><a *ngIf="loginService.isUserLoggedIn()"  routerLink="/ecoute"   class="nav-link">Ecoute clientèle</a></li>
+   <li><a *ngIf="loginService.isUserLoggedIn()"  routerLink="/info"     class="nav-link">Info générales</a></li> 
+   <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+   <li><a *ngIf="loginService.isUserLoggedIn()"  routerLink="/logout" class="nav-link">LogOut</a></li>
+  
+  
+  </ul>
+  
+  </nav>
+  
+  </header>

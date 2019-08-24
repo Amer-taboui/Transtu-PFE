@@ -1,0 +1,114 @@
+<div class="dropdown-header text-center">
+  <h4>Create Horaires</h4>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" class="dropdown-header text-center">
+    
+          <div class="form-group">
+            <label for="name">Numéro:</label>
+            <input type="name" [(ngModel)]="ligne.numero" placeholder="numero" name="numero" class="form-control" id="numero">
+          </div>
+  
+        
+
+          <div class="form-group">
+            <label for="name">Origin:</label>
+            <input type="name" [(ngModel)]="ligne.origin" placeholder="Origin" name="origin" class="form-control" id="origin">
+          </div>
+        
+
+          <div class="form-group row">
+            <label class="col-md-3 form-control-label" for="select">depot:</label>
+            <div class="col-md-9">
+              <select  id="select" type="name" [(ngModel)]="ligne.depot" name="select" class="form-control">
+                <option [value]="depot">choisir depot</option>
+                <option value="Depot charguia">Depot charguia</option>
+                <option value="Depot zahrouni">Depot zahrouni</option>
+                <option value="Depot Ben Arous">Depot Ben Arous</option>
+                <option value="Depot charguia B">Depot charguia B</option>
+                <option value="Depot Bab Saadoun">Depot Bab Saadoun</option>
+                <option value="Réseau Ferré">Réseau Ferré</option>
+
+              </select>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+          <div class="form-group row">
+            <label class="col-md-3 form-control-label" for="select">type:</label>
+            <div class="col-md-9">
+              <select  type="name" [(ngModel)]="ligne.reseau" id="select" name="select" class="form-control">
+                <option [value]="type">choisir type de Réseau</option>
+                <option value="Métro">Métro</option>
+                <option value="Bus">Bus</option>
+                <option value="TGM">TGM</option>
+              </select>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+          <div class="form-group">
+            <label for="name">Destination:</label>
+            <input type="name" [(ngModel)]="ligne.destination" placeholder="Destination" name="destination" class="form-control" id="destination">
+          </div>
+
+         
+          
+          <div class="form-group row">
+            <label class="col-md-3 form-control-label" for="select">reseau:</label>
+            <div class="col-md-9">
+              <select   type="name" [(ngModel)]="ligne.type" id="select" name="select" class="form-control">
+                <option [value]="type">choisir type de ligne</option>
+                <option value="Urbain">Urbain</option>
+                <option value="Suburban">Suburban</option>
+                <option value="scolaire">scolaire</option>
+              </select>
+            </div>
+          </div>
+          
+
+
+
+
+
+
+
+          <div class="form-group">
+            <label for="name">regimH:</label>
+            <input type="name" [(ngModel)]="ligne.regimH" placeholder="RegimH" name="regimH" class="form-control" id="regimH">
+          </div>
+   
+          <div class="form-group">
+            <label for="name">etat:</label>
+            <input type="name" [(ngModel)]="ligne.etat" placeholder="Etat" name="etat" class="form-control" id="etat">
+          </div>
+   
+
+    <button  class="btn btn-success" (click)=" onSubmit()">Create</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="createLigne()">Add</button> -->
+</div>
+</div>

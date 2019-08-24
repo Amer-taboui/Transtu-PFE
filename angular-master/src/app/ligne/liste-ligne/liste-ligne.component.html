@@ -1,0 +1,81 @@
+<!--<div class="panel panel-default">-->
+    <div class="dropdown-header text-center">
+    
+  <div class="panel-heading">
+    <h3>Liste Des Lignes</h3>
+  </div>
+  <div class="search-text">
+    <div class="container">
+      <div class="row text-center">
+        <div class="form">
+          <form id="search-form" ngSubmit="submitFilter(filter)" #filterform="ngForm"
+            class="form-search form-horizontal">
+            <input type="text" class="input-search" placeholder="Numero de ligne" [(ngModel)]="filter.numero"
+              name="NumLigne">
+            <select [(ngModel)]="filter.type" name="typeLigne">
+              <option [value]="type">Select line type</option>
+              <option *ngFor="let lt of lineTypes" [value]="lt">{{lt}}</option>
+            </select>
+            <select [(ngModel)]="filter.reseau" name="reseau">
+              <option [value]="reseau">Select reseau</option>
+              <option *ngFor="let r of reseaux" [value]="r">{{r}}</option>
+            </select>
+            <select [(ngModel)]="filter.depot" name="depot">
+              <option [value]="depot">Select depot</option>
+              <option *ngFor="let d of depots" [value]="d">{{d}}</option>
+            </select>
+            <!--<input type="text" class="input-search" placeholder="Reseau">
+                  <input type="text" class="input-search" placeholder="Depot">                  
+                  -->
+            <button type="submit" class="btn-search" (click)="submitFilter(filter)">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel-body">
+      <a routerLink="/addligne" class="btn btn-success">Add ligne</a>
+
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Numero</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Reseau</th>
+          <th>Regim Hebdonadaire</th>
+          <th>Etat</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ligne of lignes">
+          <td>{{ligne.numero}}</td>
+          <td>{{ligne.origin}}</td>
+          <td>{{ligne.destination}}</td>
+          <td>{{ligne.reseau}}</td>
+          <td>{{ligne.regimH}}</td>
+          <td>{{ligne.etat}}</td>
+         
+          <td>  <button type="button" class="btn btn-sm btn-warning" (click)="deleteLigne(ligne.id)">Delete</button></td>
+          <td><a routerLink="/editligne/{{ligne.id}}" class="btn btn-primary">edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <nav>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</div>
